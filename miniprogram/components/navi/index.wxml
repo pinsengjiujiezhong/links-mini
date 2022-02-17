@@ -1,0 +1,6 @@
+<!--components/navi/index.wxml-->
+<view class="navi">
+  <image bind:tap="upChild" disable class="right" src="{{first ? leftDis : left}}"></image>
+  <text>{{title}}</text>
+  <image bind:tap="downChild" class="left" src="{{latest ? rightDis : right}}"></image>
+</view>

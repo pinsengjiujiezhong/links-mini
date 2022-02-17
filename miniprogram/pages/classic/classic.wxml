@@ -1,0 +1,7 @@
+<!--miniprogram/pages/classic/classic.wxml-->
+<view class="header">
+  <epsoide class="epsoide" index="{{classic.id}}"></epsoide> 
+  <like class="like" likeNum="{{classic.fav_nums}}" liked="{{classic.like_status}}"/>
+</view>
+<movie img="{{classic.image}}" content="{{classic.content}}"></movie>
+<navi title="{{classic.title}}" first="{{first}}" latest="{{latest}}"></navi>

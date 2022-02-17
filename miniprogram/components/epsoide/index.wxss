@@ -1,0 +1,34 @@
+/* components/epsoide/index.wxss */
+.container{
+  height: 60rpx;
+  display: flex;
+}
+.container-no{
+  display: flex;
+  align-items: baseline;
+}
+.no{
+  font-size: 28rpx;
+}
+.index{
+  font-weight: 500;
+  line-height: 60rpx;
+  font-size: 60rpx;
+}
+.line{
+  display: inline-block;
+  height: 48rpx;
+  border-left: 1rpx solid #000;
+  margin: 0 10rpx;
+}
+.date{
+  display: flex;
+  flex-direction: column;
+}
+.month{
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+.year{
+  font-size: 24rpx;
+}

@@ -1,0 +1,20 @@
+.navi{
+  width: 600rpx;
+  height: 80rpx;
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 200rpx auto;
+}
+.right{
+  width: 80rpx;
+  height: 80rpx;
+}
+.left{
+  width: 80rpx;
+  height: 80rpx;
+}
+text{
+  font-size: 28rpx;
+}

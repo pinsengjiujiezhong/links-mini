@@ -1,0 +1,5 @@
+<!--miniprogram/components/like/index.wxml-->
+<view class="container" bindtap="onLink">
+  <image src="{{liked? 'images/like.png' : 'images/like@dis.png'}}"></image>
+  <text>{{likeNum}}</text>
+</view>
