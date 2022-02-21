@@ -1,0 +1,2 @@
+<!--miniprogram/pages/book/index.wxml-->
+<bookList bookList="{{bookList}}"></bookList>

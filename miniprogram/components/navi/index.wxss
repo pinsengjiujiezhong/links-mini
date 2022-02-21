@@ -5,9 +5,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 200rpx auto;
 }
-.right{
+.right{ 
   width: 80rpx;
   height: 80rpx;
 }

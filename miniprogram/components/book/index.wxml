@@ -1,0 +1,8 @@
+<!--components/book/index.wxml-->
+<!--https://bls.talelin.com/v1/book/hot_list-->
+<view class="container">
+  <image src="{{image}}" class="img"></image>
+  <text class="title">{{title}}</text>
+  <text class="author">{{author}}</text>
+  <text class="like">{{favNum}} 喜欢</text>
+</view>

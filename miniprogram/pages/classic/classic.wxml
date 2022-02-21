@@ -1,7 +1,9 @@
 <!--miniprogram/pages/classic/classic.wxml-->
 <view class="header">
-  <epsoide class="epsoide" index="{{classic.id}}"></epsoide> 
+  <epsoide class="epsoide" index="{{classic.index}}"></epsoide> 
   <like class="like" likeNum="{{classic.fav_nums}}" liked="{{classic.like_status}}"/>
 </view>
-<movie img="{{classic.image}}" content="{{classic.content}}"></movie>
-<navi title="{{classic.title}}" first="{{first}}" latest="{{latest}}"></navi>
+<essay wx:if="{{classic.type == 300}}" img="{{classic.image}}" content="{{classic.content}}"></essay>
+<movie wx:if="{{classic.type == 100}}" img="{{classic.image}}" content="{{classic.content}}"></movie>
+<music wx:if="{{classic.type == 200}}" img="{{classic.image}}" audioUrl="{{classic.url}}" content="{{classic.content}}"></music>
+<navi class="navi" title="{{classic.title}}" bind:onleft="onNext" bind:onright="onPrevious" first="{{first}}" latest="{{latest}}"></navi>

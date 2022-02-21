@@ -1,0 +1,25 @@
+/* components/book/index.wxss */
+.container{
+    width: 240rpx;
+    display: flex;
+    flex-direction: column;
+    margin: 40rpx auto;
+    background-color: #fff;
+    box-shadow: 2rpx 2rpx 2rpx 2rpx #eee;
+}
+.img{
+    width: 240rpx;
+    height: 250rpx;
+}
+.title{
+    font-size: 26rpx;
+}
+.author {
+    font-size: 20rpx;
+    color: #999;
+}
+.like {
+    font-size: 28rpx;
+    position: relative;
+    right: 0;
+}

@@ -1,0 +1,31 @@
+/* components/classic/movie/index.wxss */
+.classic-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.classic-img{
+  width: 500rpx;
+  height: 500rpx;
+  border-radius: 50%;
+}
+.classic-status{
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  z-index: 9;
+  top: -300rpx
+}
+.tag{
+  width: 46rpx;
+  height: 142rpx;
+  position: relative;
+  bottom: 150rpx;
+  left: -300rpx;
+}
+.content{
+  font-size: 36rpx;
+  max-width: 500rpx;
+  display: inline-block;
+}

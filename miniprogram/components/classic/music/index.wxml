@@ -1,0 +1,6 @@
+<view class="classic-container">
+  <image  class="classic-img" src="http://bls.talelin.com/images/music.1.png" style="transform: rotate({{angle}}deg);"/>
+  <image  bind:tap="musicTap" class="classic-status" src="{{status?statusPause:statusPaly}}"/>
+  <image  class="tag" src="images/music@tag.png"/>
+  <text class="content">你陪我不如蝉夏 越过城市喧嚣</text>
+</view>

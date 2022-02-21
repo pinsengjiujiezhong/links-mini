@@ -9,6 +9,22 @@ class ClassicModel extends HTTP {
       }
     })
   }
+  getPrevious(sCallback, index) {
+    this.request({
+      url: '/classic/' + index +'/previous',
+      success: (res) => {
+        sCallback(res)
+      }
+    })
+  }
+  getNext(sCallback, index) {
+    this.request({
+      url: '/classic/' + index +'/next',
+      success: (res) => {
+        sCallback(res)
+      }
+    })
+  }
 }
 
 export { ClassicModel }

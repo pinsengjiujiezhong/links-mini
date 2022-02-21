@@ -1,0 +1,4 @@
+<!--components/bookList/index.wxml-->
+<view class="container">
+    <book class="book" wx:for="{{bookList}}" wx:key="{{index}}" image="{{item.image}}" author="{{item.author}}" title="{{item.title}}" favNum="{{item.fav_nums}}"></book>
+</view>

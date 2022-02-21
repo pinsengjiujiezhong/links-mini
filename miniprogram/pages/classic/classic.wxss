@@ -5,3 +5,9 @@
   display: flex;
   justify-content: space-between;
 }
+.navi{
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translate(-50%);
+}

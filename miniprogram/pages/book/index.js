@@ -1,48 +1,23 @@
-// miniprogram/pages/classic/classic.js
-import { ClassicModel } from '../../models/classic.js'
-let classic = new ClassicModel
+import { BookModel } from '../../models/book.js'
+let book = new BookModel
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    first: false,
-    latest: false
+    bookList: []
   },
-  onLike: function (event) {
-    console.log(event)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    classic.getLatest((res) => {
-      console.log(res)
+    book.getBook((res) => {
       this.setData({
-        classic: res,
-        first: res.index === 8,
-        latest: res.index === 1
+        bookList: res
       })
     })
-  },
-  onNext: function() {
-    classic.getNext((res) => {
-      this.setData({
-        classic: res,
-        first: res.index === 8,
-        latest: res.index === 1
-      })
-    }, this.data.classic.index)
-  },
-  onPrevious: function() {
-    classic.getPrevious((res) => {
-      this.setData({
-        classic: res,
-        first: res.index === 8,
-        latest: res.index === 1
-      })
-    }, this.data.classic.index)
   },
 
   /**

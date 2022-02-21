@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "book": "/components/book/index"
+  }
+}

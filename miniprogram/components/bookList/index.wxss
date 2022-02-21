@@ -1,0 +1,9 @@
+/* components/bookList/index.wxss */
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.book{
+    width: 50%;
+}

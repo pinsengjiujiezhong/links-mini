@@ -23,11 +23,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    upChild: function() {
-      console.log('upChild')
+    onLeft: function() {
+      if (!this.properties.first) {
+        this.triggerEvent('onleft', {}, {})
+      }
     },
-    downChild: function() {
-      console.log('downChild')
+    onRight: function() {
+      if (!this.properties.latest) {
+        this.triggerEvent('onright', {}, {})
+      }
     }
   }
 })

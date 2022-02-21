@@ -1,11 +1,13 @@
-// components/classic/movie/index.js
-import {classicBehavior} from '../classic-beh'
+// components/book/index.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [classicBehavior],
   properties: {
+    image: String,
+    title: String,
+    author: String,
+    favNum: Number
   },
 
   /**
