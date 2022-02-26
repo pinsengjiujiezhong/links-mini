@@ -1,5 +1,4 @@
-import { BookModel } from '../../models/book.js'
-
+import {BookModel} from '../../models/book.js'
 let book = new BookModel
 Page({
 
@@ -7,20 +6,35 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookList: []
+    bid: '',
+    detail: {},
+    comments: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    book.getBook((res) => {
-      this.setData({
-        bookList: res
-      })
+    this.setData({
+      bid: 65
     })
+    this.getDetail()
+    this.getShortComment()
   },
-
+  getDetail: function() {
+    book.getBookDetail((res) => {
+        this.setData({
+          detail: res
+        })
+      }, this.data.bid)
+  },
+  getShortComment: function() {
+    book.getBookShortComment((res) => {
+      this.setData({
+        comments: res.comments
+      })
+    }, this.data.bid)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

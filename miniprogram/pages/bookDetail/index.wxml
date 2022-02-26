@@ -1,0 +1,46 @@
+<!--miniprogram/pages/bookDetail/index.wxml-->
+<view class="container">
+  <view class="top">
+  <image class="img" src="{{detail.image}}"></image>
+  <text class="name">{{detail.title}}</text>
+  <view class="authors">
+    <text class="author" wx:for="{{detail.author}}"  wx:key="index">{{item}}</text>
+  </view>
+</view>
+<view class="short-comment">
+  <text class="title">短评</text>
+  <view class="comment-list">
+    <view class="comment-item" wx:for="{{comments}}" wx:key="index">
+      <text class="context">{{item.content}}</text>
+      <text class="comment-number">+{{item.nums}}</text>
+    </view>  
+  </view>
+</view>
+<view class="introduction">
+  <text class="title">内容简介</text>
+  <text class="introduction-detail">{{detail.summary}}</text>
+</view>
+<view class="book-detail">
+  <text class="title">书本信息</text>
+  <view class="book-detail-item">
+    <label>出版社</label>
+    <text>{{detail.publisher}}</text>
+  </view>
+  <view class="book-detail-item">
+    <label>出版年</label>
+    <text>{{detail.pubdate}}</text>
+  </view>
+  <view class="book-detail-item">
+    <label>页数</label>
+    <text>{{detail.pages}}</text>
+  </view>
+  <view class="book-detail-item">
+    <label>定价</label>
+    <text>{{detail.price}}</text>
+  </view>
+  <view class="book-detail-item">
+    <label>装帧</label>
+    <text>{{detail.binding}}</text>
+  </view>
+</view>
+</view>

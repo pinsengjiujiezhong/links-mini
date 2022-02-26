@@ -4,10 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    image: String,
-    title: String,
-    author: String,
-    favNum: Number
+    book: Object
   },
 
   /**
@@ -21,6 +18,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    bookToDetail() {
+      let bid = this.properties.book.id
+      wx.navigateTo({
+        url: `/pages/bookDetail/index?bid=${bid}`
+      })
+    }
   }
 })

@@ -1,0 +1,64 @@
+.container{
+  background-color: #f1eae9;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding: 40rpx;
+}
+.top image{
+  width: 220rpx;
+  height: 320rpx;
+}
+.top .name{
+  font-weight: 600;
+  line-height: 60rpx;
+}
+.top .authors{
+  display: flex;
+  flex-direction: row;
+}
+.top .authors .author{
+  color: #f1eae9;
+  font-size: 24rpx;
+}
+.short-comment{
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.title{
+  font-size: 30rpx;
+  line-height:80rpx;
+  text-align: center;
+}
+.comment-list{
+  display: flex;
+  padding: 10rpx 20rpx;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.comment-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f1eae9;
+  margin: 4rpx 8rpx;
+  padding: 4rpx;
+}
+.comment-item .context{
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.comment-item .comment-number{
+  font-size: 28rpx;
+}
+.introduction{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,8 +1,10 @@
 <!--components/book/index.wxml-->
 <!--https://bls.talelin.com/v1/book/hot_list-->
-<view class="container">
-  <image src="{{image}}" class="img"></image>
-  <text class="title">{{title}}</text>
-  <text class="author">{{author}}</text>
-  <text class="like">{{favNum}} 喜欢</text>
+<view class="container" bind:tap="bookToDetail">
+  <image src="{{book.image}}" class="img"></image>
+  <view class="detail">
+    <text class="title">{{book.title}}</text>
+    <text class="author">{{book.author}}</text>
+    <text class="like">{{book.fav_nums}} 喜欢</text>
+  </view>
 </view>

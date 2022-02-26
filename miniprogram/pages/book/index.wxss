@@ -1,1 +1,31 @@
 /* miniprogram/pages/book/index.wxss */
+.search{
+  display: flex;
+  flex-direction: row;
+  height: 50rpx;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  border-radius: 20rpx;
+  margin: 10rpx auto;
+}
+.search image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.search text {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+.book-list{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+
+}
+.book-list>image{
+  height: 50rpx;
+  width: 100rpx;
+  margin: 0 auto;
+}

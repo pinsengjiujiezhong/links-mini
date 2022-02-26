@@ -1,2 +1,11 @@
 <!--miniprogram/pages/book/index.wxml-->
-<bookList bookList="{{bookList}}"></bookList>
+<view class="container">
+  <view class="search">
+    <image src="../../images/icon/search.png"></image>
+    <text>书籍搜索</text>
+  </view>
+  <view class="book-list">
+    <image class="img" src="../../images/book/quality.png"></image>
+    <bookList bookList="{{bookList}}"></bookList>
+  </view>
+</view>
