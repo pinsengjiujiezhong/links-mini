@@ -1,0 +1,10 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 110rpx;
+  border: 1px solid #eee;
+  align-items: center;
+  padding: 14rpx 20rpx;
+  box-sizing: border-box;
+}

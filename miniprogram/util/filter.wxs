@@ -1,0 +1,11 @@
+var format = function(text) {
+  if (text) {
+    var reg = getRegExp('\\\\n', 'g')
+    text = text.replace(reg, '\n&nbsp;&nbsp;&nbsp;')
+  }
+  return text
+}
+
+module.exports = {
+  format: format
+}

@@ -1,5 +1,5 @@
-<!--miniprogram/pages/bookDetail/index.wxml-->
-<view class="container">
+<wxs src="../../util/filter.wxs" module="util"></wxs>
+<view class="container" wx-if="false">
   <view class="top">
   <image class="img" src="{{detail.image}}"></image>
   <text class="name">{{detail.title}}</text>
@@ -13,12 +13,12 @@
     <view class="comment-item" wx:for="{{comments}}" wx:key="index">
       <text class="context">{{item.content}}</text>
       <text class="comment-number">+{{item.nums}}</text>
-    </view>  
+    </view>
   </view>
 </view>
 <view class="introduction">
   <text class="title">内容简介</text>
-  <text class="introduction-detail">{{detail.summary}}</text>
+  <text class="introduction-detail" decode="{{true}}">{{util.format(detail.summary)}}</text>
 </view>
 <view class="book-detail">
   <text class="title">书本信息</text>
@@ -43,4 +43,24 @@
     <text>{{detail.binding}}</text>
   </view>
 </view>
+<view class="post-container" wx-if="{{!posting}}">
+  <view class="post-comment" bind:tap="changeTip">输入短评</view>
+  <like liked="{{like.like_status}}" likeNum="{{like.fav_nums}}" class="like"></like>
+  <share class="share"></share>
+</view>
+  <view class="posting-container" wx-if="{{posting}}">
+    <view class="posting-title">
+      <text class="tip">仅可点击标签+1</text>
+      
+      <text class="cancel" bind:tap="changeTip">取消</text>
+    </view>
+    <view class="tag-list">
+      <view class="tag-item" wx:for="{{comments}}" wx:key="{{index}}">
+        <text class="context">{{item.content}}</text>
+        <text class="context-number">+{{item.nums}}</text>
+      </view>
+    </view>
+    <input type="text" placeholder="短评最多12个字" class="post" bind:confirm="submitComment"/>
+  </view>
+  <v-mask wx-if="{{posting}}" bind:tap="changeTip"/>
 </view>

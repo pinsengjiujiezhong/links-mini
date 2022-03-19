@@ -1,4 +1,5 @@
 import { BookModel } from '../../models/book.js'
+import {guid} from '../../util/common.js'
 
 let book = new BookModel
 Page({
@@ -7,20 +8,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookList: []
+    bookList: [],
+    searching: false,
+    more: ''
   },
-
+  changeSearching: function () {
+    console.log('进来了')
+    this.setData({
+      searching: !this.data.searching
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    book.getBook((res) => {
-      this.setData({
-        bookList: res
-      })
-    })
+    const hotList = book.getBook()
+    hotList.then(
+      res => {
+        this.setData({
+          bookList: res
+        })
+      }
+    )
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -60,7 +70,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      more: guid()
+    })
   },
 
   /**

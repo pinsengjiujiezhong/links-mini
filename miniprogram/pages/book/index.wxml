@@ -1,6 +1,6 @@
 <!--miniprogram/pages/book/index.wxml-->
-<view class="container">
-  <view class="search">
+<view class="container" wx:if="{{!searching}}">
+  <view class="search" bind:tap="changeSearching">
     <image src="../../images/icon/search.png"></image>
     <text>书籍搜索</text>
   </view>
@@ -9,3 +9,4 @@
     <bookList bookList="{{bookList}}"></bookList>
   </view>
 </view>
+<v-search wx:if="{{searching}}" bind:cancel="changeSearching" id="v-search" more="{{more}}"/>

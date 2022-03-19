@@ -35,6 +35,7 @@
   font-size: 30rpx;
   line-height:80rpx;
   text-align: center;
+  font-weight: 700;
 }
 .comment-list{
   display: flex;
@@ -61,4 +62,122 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20rpx;
+}
+.introduction-detail {
+  text-indent: 30rpx;
+  white-space: pre-line;
+  font-size: 30rpx;
+}
+.comment-item:first-child{
+  background-color: #fffbdd;
+}
+
+.comment-item:nth-child(2){
+  background-color: #eefbff;
+}
+.book-detail{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+.book-detail-item label{
+  padding: 10rpx 20rpx;
+  width: 120rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #eee;
+}
+.book-detail-item text{
+  padding: 10rpx 30rpx;
+  font-size: 30rpx;
+}
+.post-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.post-container{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  height: 110rpx;
+  border: 1px solid #eee;
+  align-items: center;
+  padding: 14rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.post-container .post-comment{
+  border: 1px solid #000;
+  width: 70%;
+  height: 62rpx;
+  border-radius: 31rpx;
+  font-size: 24rpx;
+  padding-left: 31rpx;
+  line-height: 62rpx;
+}
+.post-container .like{
+  width: 15%;
+  text-align: center;
+}
+.post-container .share{
+  width: 15%;
+  text-align: center;
+}
+.posting-container{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.posting-container{
+  display: flex;
+  z-index: 99;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #eee;
+  align-items: center;
+  padding: 14rpx 20rpx;
+  box-sizing: border-box;
+}
+.posting-container .posting-title {
+  width: 100%;
+  line-height: 70rpx;
+  border: 2rpx solid 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.posting-container .posting-title .tip{
+  font-size: 32rpx;
+  color: #eee;
+}
+.posting-container .posting-title .cancel{
+  font-size: 28rpx;
+}
+.posting-container .tag-list{
+  padding: 20rpx 0px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.posting-container .tag-list .tag-item{
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  background-color: #eee;
+  padding: 4rpx;
+  margin: 2rpx 10rpx; 
+}
+.post{
+  width: 100%;
+  height: 56rpx;
+  border-radius: 28rpx;
+  background-color: #eee;
+  margin: 20rpx 40rpx;
+  box-sizing: border-box;
+  padding-left: 28rpx;
+  
 }

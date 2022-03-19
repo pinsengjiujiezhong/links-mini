@@ -8,7 +8,9 @@ Page({
   data: {
     bid: '',
     detail: {},
-    comments: []
+    comments: [],
+    like: {},
+    posting: false
   },
 
   /**
@@ -16,24 +18,79 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      bid: 65
+      bid: options.bid
     })
-    this.getDetail()
-    this.getShortComment()
+    wx.showLoading()
+    const bid = this.data.bid
+    const detail = book.getBookDetail(bid)
+    const comment = book.getBookShortComment(bid)
+    const favor = book.getFavor(bid)
+    Promise.all([detail, comment, favor])
+    .then(
+      res => {
+        console.log(res)
+        this.setData({
+          like: res[2],
+          detail: res[0],
+          comments: res[1].comments
+        })
+        wx.hideLoading()
+      }
+    )
   },
-  getDetail: function() {
-    book.getBookDetail((res) => {
+  getFavor: function(bid) {
+    book.getFavor(bid)
+    .then(
+      res => {
+        console.log('like: ', res)
+        this.setData({
+          like: res
+        })
+      }
+    )
+  },
+  getDetail: function(bid) {
+    book.getBookDetail(bid)
+    .then(
+      res => {
         this.setData({
           detail: res
         })
-      }, this.data.bid)
+      }
+    )
   },
-  getShortComment: function() {
-    book.getBookShortComment((res) => {
-      this.setData({
-        comments: res.comments
-      })
-    }, this.data.bid)
+  getShortComment: function(bid) {
+    book.getBookShortComment(bid)
+    .then(
+      res => {
+        this.setData({
+          comments: res.comments
+        })
+      }
+    )
+  },
+  submitComment: function(event) {
+    console.log('event: ', event)
+    if (!event.detail.value) {
+      return
+    }
+    console.log('进来了')
+    let data = {
+      book_id: this.data.bid,
+      content: event.detail.value
+    }
+    book.postComment(data)
+    .then(
+      res => {
+        console.log('res: ', res)
+      }
+    )
+  },
+  changeTip: function () {
+    console.log('cancelTip进来了')
+    this.setData({
+      posting: !this.data.posting
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

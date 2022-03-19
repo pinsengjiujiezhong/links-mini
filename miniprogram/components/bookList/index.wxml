@@ -1,4 +1,4 @@
 <!--components/bookList/index.wxml-->
 <view class="container">
-    <book class="book" wx:for="{{bookList}}" wx:key="index" book="{{item}}"></book>
+    <book class="book" wx:for="{{bookList}}" wx:key="index" book="{{item}}" authorShow="{{true}}"></book>
 </view>

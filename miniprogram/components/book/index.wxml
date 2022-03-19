@@ -5,6 +5,6 @@
   <view class="detail">
     <text class="title">{{book.title}}</text>
     <text class="author">{{book.author}}</text>
-    <text class="like">{{book.fav_nums}} 喜欢</text>
+    <text class="like" wx:if="{{authorShow}}">{{book.fav_nums}} 喜欢</text>
   </view>
 </view>

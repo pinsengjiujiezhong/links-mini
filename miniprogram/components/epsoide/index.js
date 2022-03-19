@@ -8,12 +8,9 @@ Component({
       type: Number,
       observer: function(newVal, oldVal)  {
         let val = newVal < 10 ? '0' + newVal : newVal
-        console.log('val: ', val)
-        console.log(this)
         this.setData({
           _index: val
         })
-        console.log(this.data._index)
       }
     }
   },

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "like": "../../components/like/index",
+    "share": "../../components/share/index",
+    "v-mask": "../../components/mask/index"
+  }
 }

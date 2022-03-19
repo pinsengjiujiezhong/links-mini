@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "bookList": "/components/bookList/index"
+    "bookList": "/components/bookList/index",
+    "v-search": "../../components/search/index"
   }
 
 }

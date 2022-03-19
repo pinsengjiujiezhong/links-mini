@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="header">
+        <view class="search-container">
+            <image class="icon" src="images/search.png"/>
+            <input type="text" placeholder="书籍名" class="bar" bind:confirm="onSearch" value="{{keyword}}" auto-focus="true"/>
+            <image class="cancel-img" src="images/cancel.png" bind:tap="onClose"/>
+        </view>
+        <view class="cancel" bind:tap="onCancel">取消</view>
+    </view>
+    <view class="quick-search" wx:if="{{!searching}}">
+        <view class="history">
+            <view class="title">历史搜索</view>
+            <view class="history-key">
+                <text class="keyword" wx:for="{{historyKeyword}}" wx:key="index" bind:tap="quickSearch" data-keyword="{{item}}">{{item}}</text>
+            </view>
+        </view>
+        <view class="hot">
+            <view class="title">热门搜索</view>
+            <view class="hot-key">
+                <text class="keyword" wx:for="{{hotKeywords}}" wx:key="index" bind:tap="quickSearch" data-keyword="{{item}}">{{item}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="search-content" wx:if="{{searching}}">
+        <view class="book-list" wx:if="{{!noData}}">
+            <v-book class="book-item" autherShow="{{false}}" wx:for="{{bookList}}" wx:key="index" book="{{item}}"></v-book>
+        </view>
+        <view class="no-data" wx:if="{{noData}}">
+            <view>暂无数据</view>
+        </view>
+    </view>
+</view>

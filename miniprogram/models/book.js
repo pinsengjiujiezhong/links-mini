@@ -1,27 +1,31 @@
 import { HTTP } from '../util/http-p'
 
 class BookModel extends HTTP {
-  getBook(sCallback) {
+  getBook() {
     return this.request({
       url: '/book/hot_list'
     })
   }
-  getBookDetail(sCallback, bid) {
-    console.log(bid)
-    console.log(`/book/${bid}/detail`)
-    this.request({
-      url: `/book/${bid}/detail`,
-      success: (res) => {
-        sCallback(res)
-      }
+  getBookDetail(bid) {
+    return this.request({
+      url: `/book/${bid}/detail`
     })
   }
-  getBookShortComment(sCallback, bid) {
-    this.request({
-      url: `/book/${bid}/short_comment`,
-      success: (res) => {
-        sCallback(res)
-      }
+  getBookShortComment(bid) {
+    return this.request({
+      url: `/book/${bid}/short_comment`
+    })
+  }
+  getFavor(bid) {
+    return this.request({
+      url: `/book/${bid}/favor`
+    })
+  }
+  postComment(data) {
+    return this.request({
+      url: '/book/add/short_comment',
+      data: data,
+      method: 'POST'
     })
   }
 }
